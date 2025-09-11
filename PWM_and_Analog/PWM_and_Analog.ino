@@ -1,14 +1,15 @@
-#define PWM_LED 3
-#define ANALOG 0
+#define PWM_LED 3   // Assign pin 3 to the PWM-controlled LED
+#define ANALOG 0    // Assign analog input A0 for sensor/input reading
+
 void setup() {
-  analogReadResolution(14);
-  analogWriteResolution(14);
-  pinMode(PWM_LED, OUTPUT);
-  Serial.begin(9600);
+  analogReadResolution(14);      // Set ADC (analog-to-digital) resolution to 14 bits
+  analogWriteResolution(14);     // Set PWM (pulse-width modulation) resolution to 14 bits
+  pinMode(PWM_LED, OUTPUT);      // Configure pin 3 as output for LED
 }
 
 void loop() {
-  Serial.println(analogRead(ANALOG));
+  // Write the same analog input value to LED pin as PWM output (brightness control)
   analogWrite(PWM_LED, analogRead(ANALOG));
-  delay(50);
+
+  delay(50);  // Small delay to stabilize readings (50 ms)
 }
