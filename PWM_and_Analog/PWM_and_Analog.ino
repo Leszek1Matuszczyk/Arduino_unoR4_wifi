@@ -2,8 +2,7 @@
 #define ANALOG 0    // Assign analog input A0 for sensor/input reading
 
 void setup() {
-  analogReadResolution(14);      // Set ADC (analog-to-digital) resolution to 14 bits
-  analogWriteResolution(14);     // Set PWM (pulse-width modulation) resolution to 14 bits
+  
   pinMode(PWM_LED, OUTPUT);      // Configure pin 3 as output for LED
 }
 
